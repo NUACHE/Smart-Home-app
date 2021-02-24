@@ -1,4 +1,4 @@
-# soho
+# Smart Home (SOHO) 
 
 A new Flutter project.
 
