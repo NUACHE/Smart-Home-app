@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:soho/control.dart';
 import 'package:soho/widgets.dart';
 
 class Usage extends StatelessWidget {
@@ -49,68 +50,77 @@ class Usage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                      ),
-                      color: Colors.white,
-                      elevation: 3,
-                      child: Column(
-                        children: [
-                          SizedBox(height: 20),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text('Total Consumption'),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Stack(
-                              children: [
-                                Container(
-                                  height: 125,
-                                  width: 125,
-                                  child: Center(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: RichText(
-                                        textAlign: TextAlign.center,
-                                        text: TextSpan(
-                                          text: '26',
-                                          style: TextStyle(
-                                              fontSize: 25,
-                                              color: Colors.black),
-                                          children: [
-                                            TextSpan(
-                                              text: '\nUnits',
-                                              style: TextStyle(
-                                                  fontSize: 15,
-                                                  color: Colors.grey),
-                                            )
-                                          ],
+                    InkWell(onTap: (){
+                      Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Control(),
+                ),
+              );
+                    },
+                                          child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        color: Colors.white,
+                        elevation: 3,
+                        child: Column(
+                          children: [
+                            SizedBox(height: 20),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('Total Consumption'),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    height: 125,
+                                    width: 125,
+                                    child: Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: RichText(
+                                          textAlign: TextAlign.center,
+                                          text: TextSpan(
+                                            text: '26',
+                                            style: TextStyle(
+                                                fontSize: 25,
+                                                color: Colors.black),
+                                            children: [
+                                              TextSpan(
+                                                text: '\nUnits',
+                                                style: TextStyle(
+                                                    fontSize: 15,
+                                                    color: Colors.grey),
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                Container(
-                                  height: 125,
-                                  width: 125,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                          Colors.cyan),
-                                      strokeWidth: 6.5,
-                                      backgroundColor:
-                                          Color.fromRGBO(242, 245, 247, 1),
-                                      value: 0.26,
+                                  Container(
+                                    height: 125,
+                                    width: 125,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: CircularProgressIndicator(
+                                        valueColor: AlwaysStoppedAnimation<Color>(
+                                            Colors.cyan),
+                                        strokeWidth: 6.5,
+                                        backgroundColor:
+                                            Color.fromRGBO(242, 245, 247, 1),
+                                        value: 0.26,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                     Card(
@@ -179,6 +189,9 @@ class Usage extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(
+                  height: 30,
+                ),
                 LargeCard(
                   widget: [
                     Padding(
@@ -187,7 +200,10 @@ class Usage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Usage Meter"),
+                          Text(
+                            "Usage Meter",
+                            style: TextStyle(color: Colors.black, fontSize: 17),
+                          ),
                           FlatButton(
                             onPressed: null,
                             child: Container(
@@ -344,158 +360,165 @@ class Usage extends StatelessWidget {
                   child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          color: Colors.white,
-                          elevation: 3,
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: 2,
-                              ),
-                              Row(
-                                children: [
-                                  Text('               '),
-                                  Icon(
-                                    Icons.circle,
-                                    color: Colors.green,
-                                    size: 10,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: Container(
+                          height: 90,
+                          width: 100,
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            color: Colors.white,
+                            elevation: 3,
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 2,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    SvgPicture.asset(
-                                      'images/aircon.svg',
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Icon(
+                                        Icons.circle,
+                                        color: Colors.green,
+                                        size: 10,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Center(
+                                  child: SvgPicture.asset(
+                                    'images/aircon.svg',
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10.0),
+                            child: Container(
+                              height: 90,
+                              width: 100,
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                color: Colors.white,
+                                elevation: 3,
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      height: 2,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Icon(
+                                            Icons.circle,
+                                            color: Colors.grey,
+                                            size: 10,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Center(
+                                      child: SvgPicture.asset(
+                                        'images/washing-machine.svg',
+                                      ),
                                     ),
                                   ],
                                 ),
                               ),
-                            ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: Container(
+                          height: 90,
+                          width: 100,
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            color: Colors.white,
+                            elevation: 3,
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 2,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Icon(
+                                        Icons.circle,
+                                        color: Colors.grey,
+                                        size: 10,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Center(
+                                  child: SvgPicture.asset(
+                                    'images/bulb.svg',
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          color: Colors.white,
-                          elevation: 3,
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: 2,
-                              ),
-                              Row(
-                                children: [
-                                  Text('               '),
-                                  Icon(
-                                    Icons.circle,
-                                    color: Colors.green,
-                                    size: 10,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: Container(
+                          height: 90,
+                          width: 100,
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            color: Colors.white,
+                            elevation: 3,
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 2,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    SvgPicture.asset(
-                                      'images/washing-machine.svg',
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Icon(
+                                        Icons.circle,
+                                        color: Colors.grey,
+                                        size: 10,
+                                      ),
                                     ),
                                   ],
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          color: Colors.white,
-                          elevation: 3,
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: 2,
-                              ),
-                              Row(
-                                children: [
-                                  Text('               '),
-                                  Icon(
-                                    Icons.circle,
-                                    color: Colors.green,
-                                    size: 10,
+                                Center(
+                                  child: SvgPicture.asset(
+                                    'images/timer.svg',
                                   ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    SvgPicture.asset(
-                                      'images/bulb.svg',
-                                    ),
-                                  ],
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 15.0),
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          color: Colors.white,
-                          elevation: 3,
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: 2,
-                              ),
-                              Row(
-                                children: [
-                                  Text('               '),
-                                  Icon(
-                                    Icons.circle,
-                                    color: Colors.green,
-                                    size: 10,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    SvgPicture.asset(
-                                      'images/timer.svg',
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
