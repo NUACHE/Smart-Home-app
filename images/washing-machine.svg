@@ -1,0 +1,22 @@
+<svg id="washing-machine_1_" data-name="washing-machine (1)" xmlns="http://www.w3.org/2000/svg" width="28.042" height="35.894" viewBox="0 0 28.042 35.894">
+  <path id="Path_42" data-name="Path 42" d="M42.1,44.206A2.1,2.1,0,1,0,40,42.1,2.105,2.105,0,0,0,42.1,44.206Zm0-2.8a.7.7,0,1,1-.7.7A.7.7,0,0,1,42.1,41.4Zm0,0" transform="translate(-37.196 -37.196)" fill="#0dd0ff"/>
+  <path id="Path_45" data-name="Path 45" d="M1.4,306.7a.7.7,0,1,1-.7-.7A.7.7,0,0,1,1.4,306.7Zm0,0" transform="translate(0 -284.548)" fill="#0dd0ff"/>
+  <g id="Group_156" data-name="Group 156">
+    <path id="Path_39" data-name="Path 39" d="M302.1,40a2.1,2.1,0,1,0,2.1,2.1A2.105,2.105,0,0,0,302.1,40Zm0,2.8a.7.7,0,1,1,.7-.7A.7.7,0,0,1,302.1,42.8Zm0,0" transform="translate(-278.969 -37.196)" fill="#0dd0ff"/>
+    <g id="Group_155" data-name="Group 155">
+      <path id="Path_40" data-name="Path 40" d="M204.907,40H200.7a.7.7,0,0,0,0,1.4h4.206a.7.7,0,1,0,0-1.4Zm0,0" transform="translate(-185.979 -37.196)" fill="#0dd0ff"/>
+      <g id="Group_154" data-name="Group 154">
+        <path id="Path_41" data-name="Path 41" d="M204.907,80H200.7a.7.7,0,0,0,0,1.4h4.206a.7.7,0,1,0,0-1.4Zm0,0" transform="translate(-185.979 -74.391)" fill="#0dd0ff"/>
+        <g id="Group_153" data-name="Group 153">
+          <path id="Path_46" data-name="Path 46" d="M25.939,0H2.1A2.105,2.105,0,0,0,0,2.1V19.349a.7.7,0,1,0,1.4,0V9.815H26.64V33.791a.7.7,0,0,1-.7.7H2.1a.7.7,0,0,1-.7-.7V24.958a.7.7,0,0,0-1.4,0v8.833a2.105,2.105,0,0,0,2.1,2.1H25.939a2.105,2.105,0,0,0,2.1-2.1V2.1A2.105,2.105,0,0,0,25.939,0ZM11.217,8.413H1.4V2.1a.7.7,0,0,1,.7-.7h9.114Zm15.423,0H12.619V1.4h13.32a.7.7,0,0,1,.7.7Zm0,0" fill="#0dd0ff"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_158" data-name="Group 158">
+      <path id="Path_43" data-name="Path 43" d="M88.227,195.114a9.114,9.114,0,1,0-9.114,9.114A9.124,9.124,0,0,0,88.227,195.114Zm-16.825,0a7.712,7.712,0,1,1,7.712,7.712A7.721,7.721,0,0,1,71.4,195.114Zm0,0" transform="translate(-65.093 -172.96)" fill="#0dd0ff"/>
+      <g id="Group_157" data-name="Group 157">
+        <path id="Path_44" data-name="Path 44" d="M122.619,232.31a6.31,6.31,0,1,0-6.31,6.31A6.321,6.321,0,0,0,122.619,232.31Zm-1.853-2.054a4.9,4.9,0,0,1,0,4.107,2.1,2.1,0,0,1,0-4.107ZM111.4,232.31a4.9,4.9,0,0,1,8.561-3.271,3.5,3.5,0,0,0,0,6.542,4.9,4.9,0,0,1-8.561-3.271Zm0,0" transform="translate(-102.289 -210.156)" fill="#0dd0ff"/>
+      </g>
+    </g>
+  </g>
+</svg>
