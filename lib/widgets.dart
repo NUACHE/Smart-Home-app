@@ -8,9 +8,15 @@ class SmallCard extends StatelessWidget {
   final String name;
   final String details;
   final Color coloring;
+  final Color powerColor;
 
   const SmallCard(
-      {Key key, this.widget, this.name, this.details, this.coloring})
+      {Key key,
+      this.widget,
+      this.name,
+      this.details,
+      this.coloring,
+      this.powerColor})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -72,7 +78,8 @@ class SmallCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 IconButton(
-                    icon: Icon(Icons.power_settings_new, color: Colors.red),
+                    icon: Icon(Icons.power_settings_new,
+                        color: powerColor ?? Colors.red),
                     onPressed: () {}),
               ],
             )

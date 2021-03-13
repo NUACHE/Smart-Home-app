@@ -2,7 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:soho/all_appliances.dart';
 import 'package:soho/control.dart';
+import 'package:soho/control2.dart';
 import 'package:soho/widgets.dart';
 
 class Usage extends StatelessWidget {
@@ -50,15 +52,16 @@ class Usage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    InkWell(onTap: (){
-                      Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Control(),
-                ),
-              );
-                    },
-                                          child: Card(
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Control(),
+                          ),
+                        );
+                      },
+                      child: Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15.0),
                         ),
@@ -107,8 +110,9 @@ class Usage extends StatelessWidget {
                                     child: Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: CircularProgressIndicator(
-                                        valueColor: AlwaysStoppedAnimation<Color>(
-                                            Colors.cyan),
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                                Colors.cyan),
                                         strokeWidth: 6.5,
                                         backgroundColor:
                                             Color.fromRGBO(242, 245, 247, 1),
@@ -123,68 +127,79 @@ class Usage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                      ),
-                      color: Colors.white,
-                      elevation: 3,
-                      child: Column(
-                        children: [
-                          SizedBox(height: 20),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text('Overall Consumption'),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Control2(),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Stack(
-                              children: [
-                                Container(
-                                  height: 125,
-                                  width: 125,
-                                  child: Center(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: RichText(
-                                        textAlign: TextAlign.center,
-                                        text: TextSpan(
-                                          text: '467',
-                                          style: TextStyle(
-                                              fontSize: 25,
-                                              color: Colors.black),
-                                          children: [
-                                            TextSpan(
-                                              text: '\nUnits',
-                                              style: TextStyle(
-                                                  fontSize: 15,
-                                                  color: Colors.grey),
-                                            )
-                                          ],
+                        );
+                      },
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        color: Colors.white,
+                        elevation: 3,
+                        child: Column(
+                          children: [
+                            SizedBox(height: 20),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('Overall Consumption'),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    height: 125,
+                                    width: 125,
+                                    child: Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: RichText(
+                                          textAlign: TextAlign.center,
+                                          text: TextSpan(
+                                            text: '467',
+                                            style: TextStyle(
+                                                fontSize: 25,
+                                                color: Colors.black),
+                                            children: [
+                                              TextSpan(
+                                                text: '\nUnits',
+                                                style: TextStyle(
+                                                    fontSize: 15,
+                                                    color: Colors.grey),
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                Container(
-                                  height: 125,
-                                  width: 125,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                          Colors.blue),
-                                      strokeWidth: 6.5,
-                                      backgroundColor:
-                                          Color.fromRGBO(242, 245, 247, 1),
-                                      value: 0.76,
+                                  Container(
+                                    height: 125,
+                                    width: 125,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                                Colors.blue),
+                                        strokeWidth: 6.5,
+                                        backgroundColor:
+                                            Color.fromRGBO(242, 245, 247, 1),
+                                        value: 0.76,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -348,9 +363,19 @@ class Usage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'All Appliances',
-                        style: TextStyle(color: Colors.black, fontSize: 17),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AllAppliances(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'All Appliances',
+                          style: TextStyle(color: Colors.black, fontSize: 17),
+                        ),
                       ),
                     ],
                   ),

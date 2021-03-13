@@ -4,15 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:soho/widgets.dart';
 
-class Control extends StatefulWidget {
+class Control2 extends StatefulWidget {
   @override
-  _ControlState createState() => _ControlState();
+  _Control2State createState() => _Control2State();
 }
 
 var val = 7.0;
-var col = Colors.blue;
 
-class _ControlState extends State<Control> {
+class _Control2State extends State<Control2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,14 +29,14 @@ class _ControlState extends State<Control> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Living Room',
+                        'Bedroom',
                         style: TextStyle(
                             fontSize: 30, fontWeight: FontWeight.bold),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(
-                          'Hitachi V9200',
+                          'Philips Smart Light',
                           style: TextStyle(color: Colors.grey),
                         ),
                       )
@@ -90,7 +89,7 @@ class _ControlState extends State<Control> {
                           thumbShape:
                               RoundSliderThumbShape(enabledThumbRadius: 15.5),
                           trackHeight: 30.0,
-                          activeTrackColor: col,
+                          activeTrackColor: Colors.greenAccent,
                         ),
                         child: Slider(
                           inactiveColor: Colors.blueGrey[100],
@@ -101,11 +100,6 @@ class _ControlState extends State<Control> {
                             setState(
                               () {
                                 val = newval;
-                                if (newval == 10) {
-                                  col = Colors.red;
-                                } else {
-                                  col = Colors.blue;
-                                }
                               },
                             );
                           },
@@ -118,8 +112,8 @@ class _ControlState extends State<Control> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Hot'),
-                        Text('Cold'),
+                        Text('Bright'),
+                        Text('Dim'),
                       ],
                     ),
                   )
