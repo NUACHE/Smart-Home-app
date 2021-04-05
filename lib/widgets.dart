@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -201,5 +202,53 @@ class ClockPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return true;
+  }
+}
+
+class SmallSliders extends StatefulWidget {
+  final Function runFunc;
+  final double val;
+  final Color color;
+   SmallSliders({Key key, this.runFunc, this.val, this.color}) : super(key: key);
+
+  @override
+  _SmallSlidersState createState() => _SmallSlidersState();
+}
+
+class _SmallSlidersState extends State<SmallSliders> {
+  @override
+  Widget build(BuildContext context) {
+    
+        return  Container(
+                  height: 120,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 0.0),
+                        child: RotatedBox(
+                          quarterTurns: 3,
+                          child: SliderTheme(
+                            data: SliderThemeData(
+                              thumbColor: widget.color,
+                              thumbShape:
+                                  RoundSliderThumbShape(enabledThumbRadius: 5.5),
+                              trackHeight: 10.0,
+                              activeTrackColor: widget.color,
+                            ),
+                            child: Slider(
+                              inactiveColor: Colors.white,
+                              value: widget.val,
+                          min: 0,
+                          max: 10,
+                          onChanged: widget.runFunc,
+                        ),
+                      ),
+                    ),
+                  ),
+                  
+                ],
+              ),
+            );
   }
 }

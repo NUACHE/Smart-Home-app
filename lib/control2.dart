@@ -9,7 +9,13 @@ class Control2 extends StatefulWidget {
   _Control2State createState() => _Control2State();
 }
 
+//Values for sliders must be different
 var val = 7.0;
+var first = 0.0;
+var second = 0.1;
+var fourth = 5.0;
+var third = 4.0;
+var fifth = 6.5;
 
 class _Control2State extends State<Control2> {
   @override
@@ -190,39 +196,70 @@ class _Control2State extends State<Control2> {
             Row(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 30),
-                  child: RichText(
-                    text: TextSpan(
-                      text: "Outside Temperature is ",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                      ),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: '\n36\u00b0c',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30),
-                        ),
-                      ],
-                    ),
-                  ),
+                  padding: const EdgeInsets.only(right: 5.0, left: 30.0),
+                  child: Text("Select Hue", style: TextStyle(fontSize: 20),)
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 30.0,
-                right: 15,
-                top: 15,
-                bottom: 15,
-              ),
-              child: Text(
-                'Spending more on an air conditioner, save more by switching ac to the room temperature at night time.',
-                style: TextStyle(color: Colors.grey, fontSize: 10),
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SmallSliders(
+                  val: first,
+                  runFunc: (newval) {
+                    setState(
+                      () {
+                        first = newval;
+                      },
+                    );
+                  },
+                  color: Colors.yellow,
+                ),
+                SmallSliders(
+                  val: second,
+                  runFunc: (newval) {
+                    setState(
+                      () {
+                        second = newval;
+                      },
+                    );
+                  },
+                  color: Colors.orange,
+                ),
+                SmallSliders(
+                  val: third,
+                  runFunc: (newval) {
+                    setState(
+                      () {
+                        third = newval;
+                      },
+                    );
+                  },
+                  color: Colors.red,
+                ),
+                SmallSliders(
+                  val: fourth,
+                  runFunc: (newval) {
+                    setState(
+                      () {
+                        fourth = newval;
+                      },
+                    );
+                  },
+                  color: Colors.indigo,
+                ),
+                SmallSliders(
+                  val: fifth,
+                  runFunc: (newval) {
+                    setState(
+                      () {
+                        fifth = newval;
+                      },
+                    );
+                  },
+                  color: Colors.green,
+                ),
+              ],
             )
           ],
         ),
