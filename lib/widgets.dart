@@ -252,3 +252,39 @@ class _SmallSlidersState extends State<SmallSliders> {
             );
   }
 }
+
+class LittleCards extends StatelessWidget {
+  final String text;
+  final Color color;
+   final Color textcolor;
+
+  const LittleCards({Key key, this.text, this.color, this.textcolor}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: Container(
+                          height: 70,
+                          width: 80,
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            color: color ?? Colors.white,
+                            elevation: 3,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                              
+                                Center(
+                                  child: Text(
+                                   text, style: TextStyle(color: textcolor ?? Colors.black),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+  }
+}

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:soho/dashboard.dart';
+import 'package:soho/index.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,7 +42,7 @@ class Screen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Dashboard(),
+                  builder: (context) => Index(),
                 ),
               );
             },
