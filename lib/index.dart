@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soho/add_appliances.dart';
 import 'package:soho/all_appliances.dart';
 import 'package:soho/control.dart';
 import 'package:soho/control2.dart';
@@ -85,6 +86,18 @@ class _IndexState extends State<Index> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => Timer(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: Text("Add Appliances"),
+              onTap: () {
+                print('hi');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AddAppliances(),
                   ),
                 );
               },

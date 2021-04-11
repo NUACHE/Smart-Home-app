@@ -1,6 +1,3 @@
-import 'dart:ffi';
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
@@ -209,7 +206,7 @@ class SmallSliders extends StatefulWidget {
   final Function runFunc;
   final double val;
   final Color color;
-   SmallSliders({Key key, this.runFunc, this.val, this.color}) : super(key: key);
+  SmallSliders({Key key, this.runFunc, this.val, this.color}) : super(key: key);
 
   @override
   _SmallSlidersState createState() => _SmallSlidersState();
@@ -218,73 +215,103 @@ class SmallSliders extends StatefulWidget {
 class _SmallSlidersState extends State<SmallSliders> {
   @override
   Widget build(BuildContext context) {
-    
-        return  Container(
-                  height: 120,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 0.0),
-                        child: RotatedBox(
-                          quarterTurns: 3,
-                          child: SliderTheme(
-                            data: SliderThemeData(
-                              thumbColor: widget.color,
-                              thumbShape:
-                                  RoundSliderThumbShape(enabledThumbRadius: 5.5),
-                              trackHeight: 10.0,
-                              activeTrackColor: widget.color,
-                            ),
-                            child: Slider(
-                              inactiveColor: Colors.white,
-                              value: widget.val,
-                          min: 0,
-                          max: 10,
-                          onChanged: widget.runFunc,
-                        ),
-                      ),
-                    ),
-                  ),
-                  
-                ],
+    return Container(
+      height: 120,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 0.0),
+            child: RotatedBox(
+              quarterTurns: 3,
+              child: SliderTheme(
+                data: SliderThemeData(
+                  thumbColor: widget.color,
+                  thumbShape: RoundSliderThumbShape(enabledThumbRadius: 5.5),
+                  trackHeight: 10.0,
+                  activeTrackColor: widget.color,
+                ),
+                child: Slider(
+                  inactiveColor: Colors.white,
+                  value: widget.val,
+                  min: 0,
+                  max: 10,
+                  onChanged: widget.runFunc,
+                ),
               ),
-            );
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 
 class LittleCards extends StatelessWidget {
   final String text;
   final Color color;
-   final Color textcolor;
+  final Color textcolor;
 
-  const LittleCards({Key key, this.text, this.color, this.textcolor}) : super(key: key);
+  const LittleCards({Key key, this.text, this.color, this.textcolor})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
-                        padding: const EdgeInsets.only(right: 10.0),
-                        child: Container(
-                          height: 70,
-                          width: 80,
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                            color: color ?? Colors.white,
-                            elevation: 3,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                              
-                                Center(
-                                  child: Text(
-                                   text, style: TextStyle(color: textcolor ?? Colors.black),
-                                  ),
-                                ),
-                              ],
-                            ),
+      padding: const EdgeInsets.only(right: 10.0),
+      child: Container(
+        height: 70,
+        width: 80,
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          color: color ?? Colors.white,
+          elevation: 3,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Text(
+                  text,
+                  style: TextStyle(color: textcolor ?? Colors.black),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class NewDevice extends StatelessWidget {
+  final Widget widget;
+  final String text;
+
+  const NewDevice({Key key, @required this.widget, @required this.text}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+                  padding: const EdgeInsets.only(right: 5.0, left: 30.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 70,
+                        width: 70,
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(65.0),
+                          ),
+                          color: Colors.white,
+                          elevation: 3,
+                          child: Center(
+                            child:widget,
                           ),
                         ),
-                      );
+                      ),
+                      Text(text),
+                    ],
+                  ),
+                );
   }
 }

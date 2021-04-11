@@ -45,7 +45,7 @@ class _Control2State extends State<Control2> {
                           'Philips Smart Light',
                           style: TextStyle(color: Colors.grey),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

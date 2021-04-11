@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:soho/widgets.dart';
+
 
 class Control extends StatefulWidget {
   @override
@@ -10,7 +10,7 @@ class Control extends StatefulWidget {
 }
 
 var val = 7.0;
-var col = Colors.blue;
+
 
 class _ControlState extends State<Control> {
   @override
@@ -90,7 +90,7 @@ class _ControlState extends State<Control> {
                           thumbShape:
                               RoundSliderThumbShape(enabledThumbRadius: 15.5),
                           trackHeight: 30.0,
-                          activeTrackColor: col,
+                          activeTrackColor: Colors.blue,
                         ),
                         child: Slider(
                           inactiveColor: Colors.blueGrey[100],
@@ -101,11 +101,7 @@ class _ControlState extends State<Control> {
                             setState(
                               () {
                                 val = newval;
-                                if (newval == 10) {
-                                  col = Colors.red;
-                                } else {
-                                  col = Colors.blue;
-                                }
+                               
                               },
                             );
                           },
